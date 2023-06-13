@@ -1,34 +1,48 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Prisma
 
-## Getting Started
+guide is available at:
 
-First, run the development server:
+https://fullstack-v2-instructions.vercel.app/lessons/db/db-schema
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+### Create Schema
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Everything starts with an DB schema. We need to model our data using Prisma.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Migrate
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+After creating our schema, we need to do a few things:
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+- Sync our DB and schema together
+- Generate a typesafe ORM based on our schema so we can interact with the DB
 
-## Learn More
+Luckily for us, prisma handles all of this for us. We can use the migrate command.
 
-To learn more about Next.js, take a look at the following resources:
+`npx prisma migrate dev`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### create db connection helper
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Because Next API functions run in a serveless environment, we're going to cache our Prisma client and reuse it when possible to avoid having too many connections.
 
-## Deploy on Vercel
+see `/lib/db.ts`
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### create sees script
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+see seed script at `/prisma/seed.ts`
+
+The seed script will be running using `ts-node`, so we need to create a new tsconfig for that runtime.
+
+see `/tsconfig-seed.json`
+
+add the following to the `package.json`:
+
+"prisma": {
+"seed": "ts-node -P tsconfig-seed.json -r tsconfig-paths/register --transpileOnly prisma/seed.ts"
+}
+
+### run seed script
+
+`npx prisma db seed`
+
+### check the data
+
+`npx prisma studio`
