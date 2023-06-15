@@ -1,5 +1,3 @@
-// import AuthForm from "@/components/organisms/AuthForm/component";
-
 import AuthForm from "@/components/organisms/AuthForm/component";
 
 export default function Register() {

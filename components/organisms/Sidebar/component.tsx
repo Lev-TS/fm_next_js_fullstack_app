@@ -9,7 +9,7 @@ import { SIDE_BAR_LINKS } from "./constants";
 
 const Sidebar = () => {
   return (
-    <Card className="h-full w-40 flex items-center justify-between flex-wrap">
+    <Card className="h-full w-40 flex flex-col items-center justify-evenly flex-wrap">
       <div className="w-full flex justify-center items-center">
         <Image src={logo} alt="Able logo" priority className="w-14" />
       </div>

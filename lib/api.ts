@@ -1,5 +1,4 @@
 import { ApiRoutes } from "@/constants/routes";
-import { Prisma } from "@prisma/client";
 
 const fetcher = async <Data>({
   url,
