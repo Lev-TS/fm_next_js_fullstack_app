@@ -46,3 +46,9 @@ add the following to the `package.json`:
 ### check the data
 
 `npx prisma studio`
+
+### deploy prisma migrations
+
+add production database url to the env and run
+
+`npx prisma migrate deploy`
