@@ -11,11 +11,12 @@ export default function DashboardRootLayout({
   return (
     <html lang="en">
       <head />
-      <body className="h-screen w-screen candy-mesh p-6 flex gap-x-5">
-        <Sidebar />
-        <GlassPane className="glass w-full h-full flex items-center justify-center">
+      <body className="h-screen w-screen candy-mesh p-6">
+        <GlassPane className="glass w-full h-full flex items-center justify-center gap-3">
+          <Sidebar />
           {children}
         </GlassPane>
+        <div id="modal" />
       </body>
     </html>
   );

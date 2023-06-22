@@ -11,9 +11,8 @@ export default function AuthRootLayout({
   return (
     <html lang="en">
       <head />
-      <body className="h-screen w-screen rainbow-mesh p-6 gap-x-5 flex">
-        <Sidebar />
-        <GlassPane className="glass w-full h-full flex items-center justify-center">
+      <body className="h-screen w-screen rainbow-mesh p-6">
+        <GlassPane className="glass w-full h-full flex items-center justify-center p-3">
           {children}
         </GlassPane>
       </body>

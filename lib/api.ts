@@ -50,3 +50,10 @@ export const signIn = (user: User) =>
     url: ApiRoutes.SignIn,
     body: JSON.stringify(user),
   });
+
+export const createNewProject = async (name: string) => {
+  return fetcher({
+    url: ApiRoutes.CreateNewProject,
+    body: JSON.stringify({ name }),
+  });
+};

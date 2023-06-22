@@ -1,9 +1,17 @@
 {
   "typescript.tsdk": "node_modules/typescript/lib",
   "typescript.enablePromptUseWorkspaceTsdk": true,
+  "typescript.preferences.includePackageJsonAutoImports": "on",
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "[typescript]": {
+  	"editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
   "files.exclude": {
-		"**/node_modules": true,
+    "**/node_modules": true,
     "**/.git": true,
-    "**/.next": true
-	},
+    "**/.next": true,
+    "**/next-env.d.ts": true
+  }
 }
