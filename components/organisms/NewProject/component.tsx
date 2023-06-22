@@ -4,7 +4,7 @@ import Button from "@/components/atoms/Button/component";
 import Input from "@/components/atoms/Input/component";
 import { createNewProject } from "@/lib/api";
 import { useRouter } from "next/navigation";
-import { FormEventHandler, useState } from "react";
+import { FormEventHandler, useEffect, useState } from "react";
 import Modal from "react-modal";
 
 Modal.setAppElement("#modal");
