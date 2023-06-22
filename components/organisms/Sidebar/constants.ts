@@ -13,16 +13,16 @@ export const SIDE_BAR_LINKS: SideBarLinkProps[] = [
   {
     label: "Calendar",
     icon: SidebarIcons.Calendar,
-    link: PageRoutes.Calendar,
+    link: PageRoutes.Home,
   },
   {
     label: "Profile",
     icon: SidebarIcons.User,
-    link: PageRoutes.Profile,
+    link: PageRoutes.Home,
   },
   {
     label: "Settings",
     icon: SidebarIcons.Settings,
-    link: PageRoutes.Settings,
+    link: PageRoutes.Home,
   },
 ];
