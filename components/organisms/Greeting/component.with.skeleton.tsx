@@ -24,6 +24,7 @@ const Skeleton = () => {
 
 export const SuspendedGreeting = () => (
   <Suspense fallback={<Skeleton />}>
+    {/* @ts-expect-error Server Component */}
     <Greeting />
   </Suspense>
 )
