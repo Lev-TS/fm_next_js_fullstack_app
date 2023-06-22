@@ -1,10 +1,6 @@
 import Button from "@/components/atoms/Button/component";
 import Card from "@/components/atoms/Card/component";
-import { getUserFromCookie } from "@/lib/auth";
-import { db } from "@/lib/db";
-import { Task, TASK_STATUS } from "@prisma/client";
-import { cookies } from "next/headers";
-import { FC } from "react";
+import { Task } from "@prisma/client";
 import { getData } from "./helpers";
 
 

@@ -1,12 +1,9 @@
 import Button from "@/components/atoms/Button/component";
 import Card from "@/components/atoms/Card/component";
-import { FC } from "react";
 
 import { getData } from "./helpers";
 
-// known issue with next 
-// @ts-ignore
-const Greeting: FC = async () => {
+const Greeting = async () => {
   const user = await getData();
 
   if (!user) {

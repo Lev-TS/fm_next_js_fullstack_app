@@ -1,6 +1,5 @@
 import { FC } from "react";
 
-import clsx from "clsx";
 import Card from "@/components/atoms/Card/component";
 
 import { calculateProgress, formatDate } from "./helpers";

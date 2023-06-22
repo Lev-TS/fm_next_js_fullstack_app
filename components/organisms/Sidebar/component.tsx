@@ -1,7 +1,6 @@
 import Image from "next/image";
 
 import logo from "@/assets/images/logo.png";
-
 import Card from "@/components/atoms/Card/component";
 import SidebarLink from "@/components/molecules/SidebarLink/component";
 
